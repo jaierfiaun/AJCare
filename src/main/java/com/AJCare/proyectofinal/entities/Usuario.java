@@ -2,13 +2,19 @@ package com.AJCare.proyectofinal.entities;
 import jakarta.persistence.*;
 
 @Entity
-public class Curso {
+@Inheritance(strategy = InheritanceType.JOINED)
+public abstract class Usuario {
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
   @Column(name = "id")
   private int id;
 
   @Column
-  private String nombre;
+  private String rut;
 
+  @Column
+  private String nombres;
+
+  @Column
+  private String apellidos;
 }

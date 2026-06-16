@@ -17,4 +17,8 @@ public class Atenciones {
   @ManyToOne
   @JoinColumn(name = "id_alumno", referencedColumnName = "id")
   private Alumno idAlumno;
+
+  @ManyToOne
+  @JoinColumn(name = "id_enfermero", referencedColumnName = "id")
+  private Alumno idEnfermero;
 }

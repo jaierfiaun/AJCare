@@ -29,9 +29,19 @@ header {
   height: 100%;
 }
 
-.boton-inferior {
+.contenedor-inferior {
   display: flex;
   justify-content: center;
+  margin-top: 20px;
+}
+
+.boton-inferior {
+  background: rgb(53 72 71);
+  padding: 6px 12px;
+  border-radius: 8px;
+  margin: 4px 8px;
+  color: white;
+  font-size: x-large;
 }
 
 .panel-superior {
@@ -48,4 +58,9 @@ table {
 
 th {
   font-weight: normal;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }

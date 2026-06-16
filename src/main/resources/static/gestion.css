@@ -1,0 +1,87 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #d5d5d5;
+}
+
+header {
+  background: rgb(53 72 71);
+  display: flex;
+  padding: 10px 4px;
+  justify-content: space-between;
+}
+
+.boton {
+  background: #ffffff;
+  padding: 6px 12px;
+  border-radius: 8px;
+  margin: 4px 8px;
+  color: rgb(53 72 71);
+  font-size: large;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+#contenedor {
+  display: flex;
+  width: 100%;
+}
+
+.cursos {
+  background: white;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+  margin: 10px;
+  width: 75%;
+}
+
+.enfermeros {
+  background: white;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 8px;
+  margin: 10px;
+  width: 25%;
+}
+
+#curso {
+  font-size: large;
+  width: 250px;
+  padding: 10px;
+  border: 2px solid rgb(53 72 71);
+  border-radius: 8px;
+  background-color: white;
+  cursor: pointer;
+}
+
+#enfermero {
+  font-size: large;
+  padding: 10px;
+  border: 2px solid rgb(53 72 71);
+  border-radius: 8px;
+  background-color: white;
+}
+
+#boton-agregar {
+  background: rgb(53 72 71);
+  padding: 6px 12px;
+  border-radius: 8px;
+  color: white;
+  font-size: large;
+  display: flex;
+  align-items: center;
+}
+
+.agregar-enfermero {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+

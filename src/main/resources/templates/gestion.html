@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" th:href="@{gestion.css}">
+  <title>Gestión</title>
+</head>
+<body>
+
+  <header>
+    <div class="boton">
+      <a href="/index">Volver</a>
+    </div>
+  </header>
+
+  <div id="contenedor">
+
+    <div class="cursos">
+
+      <div class="buscador">
+        <label for="curso"></label>
+        <select name="curso" id="curso">
+          <option value="">Seleccione un curso</option>
+          <option
+                  th:each="curso : ${cursos}"
+                  th:value="${curso.id}"
+                  th:text="${curso.nombre}">
+          </option>
+        </select>
+      </div>
+
+    </div>
+
+    <div class="enfermeros">
+      <div class="agregar-enfermero">
+        <label>
+          <input id="enfermero" type="text">
+        </label>
+        <a id="boton-agregar">Agregar enfermero</a>
+      </div>
+    </div>
+
+  </div>
+
+
+
+</body>
+</html>

@@ -20,5 +20,25 @@ public class Atenciones {
 
   @ManyToOne
   @JoinColumn(name = "id_enfermero", referencedColumnName = "id")
-  private Alumno idEnfermero;
+  private Enfermero idEnfermero;
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setFechaHora(String fechaHora) {
+        this.fechaHora = fechaHora;
+    }
+
+    public void setMotivo(String motivo) {
+        this.motivo = motivo;
+    }
+
+    public void setIdAlumno(Alumno idAlumno) {
+        this.idAlumno = idAlumno;
+    }
+
+    public void setIdEnfermero(Enfermero idEnfermero) {
+        this.idEnfermero = idEnfermero;
+    }
 }

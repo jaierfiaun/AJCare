@@ -3,4 +3,6 @@ import jakarta.persistence.*;
 
 @Entity
 public class Enfermero extends Usuario{
+
+
 }

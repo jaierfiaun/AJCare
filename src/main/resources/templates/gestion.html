@@ -27,16 +27,58 @@
                   th:text="${curso.nombre}">
           </option>
         </select>
+
+        <a class="boton-agregar">Agregar alumno</a>
+      </div>
+
+      <div class="contenedor-tabla">
+        <table>
+          <thead>
+          <tr>
+            <th>RUT</th>
+            <th>Nombres</th>
+            <th>Apellidos</th>
+            <th>Contacto</th>
+            <th>Editar</th>
+            <th>Eliminar</th>
+          </tr>
+          </thead>
+
+          <tbody>
+
+          </tbody>
+        </table>
       </div>
 
     </div>
 
     <div class="enfermeros">
       <div class="agregar-enfermero">
-        <label>
-          <input id="enfermero" type="text">
-        </label>
-        <a id="boton-agregar">Agregar enfermero</a>
+        <a href="/agregar-enfermero" class="boton-agregar">Agregar enfermero</a>
+      </div>
+
+      <div class="contenedor-tabla">
+        <table>
+          <thead>
+          <tr>
+            <th>RUT</th>
+            <th>Nombres</th>
+            <th>Apellidos</th>
+            <th>Editar</th>
+            <th>Eliminar</th>
+          </tr>
+          </thead>
+
+          <tbody>
+            <tr th:each="enfermero : ${enfermeros}">
+              <td th:text="${enfermero.rut}"></td>
+              <td th:text="${enfermero.nombres}"></td>
+              <td th:text="${enfermero.apellidos}"></td>
+              <td></td>
+              <td>Eliminar</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
 

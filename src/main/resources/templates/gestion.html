@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <link rel="stylesheet" th:href="@{gestion.css}">
+  <link rel="stylesheet" th:href="@{/gestion.css(v=1.1)}">
   <title>Gestión</title>
 </head>
 <body>
@@ -19,36 +19,45 @@
 
       <div class="buscador">
         <a class="titulo">Alumnos</a>
-        <div>
-        <label for="curso"></label>
-          <select name="curso" id="curso">
-            <option value="">Seleccione un curso</option>
-            <option
-                    th:each="curso : ${cursos}"
-                    th:value="${curso.id}"
-                    th:text="${curso.nombre}">
-            </option>
-          </select>
-        </div>
-
+        <form th:action="@{/gestion}" method="get">
+          <div>
+            <label for="curso"></label>
+            <select name="cursoId" id="curso">
+              <option value="">Seleccione un curso</option>
+              <option th:each="curso : ${cursos}"
+                      th:value="${curso.id}"
+                      th:text="${curso.nombre}"
+                      th:selected="${curso.id==cursoSeleccionadoId}">
+              </option>
+            </select>
+            <button type="submit" class="boton-buscar">Buscar</button>
+          </div>
+        </form>
         <a class="boton-agregar">Agregar alumno</a>
       </div>
 
       <div class="contenedor-tabla">
         <table>
           <thead>
-          <tr>
-            <th>RUT</th>
-            <th>Nombres</th>
-            <th>Apellidos</th>
-            <th>Contacto</th>
-            <th></th>
-            <th></th>
-          </tr>
+            <tr>
+              <th>RUT</th>
+              <th>Nombres</th>
+              <th>Apellidos</th>
+              <th>Contacto</th>
+              <th></th>
+              <th></th>
+            </tr>
           </thead>
 
           <tbody>
-
+          <tr th:each="alumno : ${alumnos}">
+            <td th:text="${alumno.rut}"></td>
+            <td th:text="${alumno.nombres}"></td>
+            <td th:text="${alumno.apellidos}"></td>
+            <td th:text="${alumno.telefonoContacto}"></td>
+            <td>Editar</td>
+            <td>Eliminar</td>
+          </tr>
           </tbody>
         </table>
       </div>

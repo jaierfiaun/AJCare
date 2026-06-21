@@ -72,6 +72,19 @@ a {
   background-color: white;
 }
 
+.boton-buscar {
+  background: white;
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: rgb(53 72 71) 2px solid;
+  color: rgb(53 72 71);
+  align-items: center;
+  justify-content: center;
+  font-size: medium;
+  height: 100%;
+  cursor: pointer;
+}
+
 .boton-agregar {
   background: white;
   padding: 6px 12px;

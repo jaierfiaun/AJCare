@@ -22,4 +22,10 @@ public class Alumno extends Usuario{
     this.idCurso = idCurso;
   }
 
+  public String getTelefonoContacto() {
+    return telefonoContacto;
+  }
+  public Curso getIdCurso() {
+    return idCurso;
+  }
 }

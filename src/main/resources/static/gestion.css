@@ -40,19 +40,18 @@ a {
   flex-direction: column;
   gap: 10px;
   width: 60%;
-
 }
 
 .enfermeros {
   background: white;
   border-radius: 8px;
   display: flex;
-  justify-content: space-evenly;
   padding: 8px;
   margin: 10px;
   flex-direction: column;
   width: 40%;
   gap: 10px;
+  height: 85vh;
 }
 
 #curso {
@@ -87,7 +86,7 @@ a {
 .agregar-enfermero {
   width: 100%;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   gap: 4px;
 }
 
@@ -104,13 +103,30 @@ thead {
 
 table {
   width: 100%;
+  border-spacing: 0;
+  border-left: rgb(53 72 71) 2px solid;
+  border-right: rgb(53 72 71) 2px solid;
 }
 
-th {
+table th, table td {
+  text-align: center;
+  vertical-align: middle;
   padding: 4px;
+}
+
+td {
+  border-bottom: rgb(53 72 71) 2px solid;
 }
 
 .buscador {
   display: flex;
   justify-content: space-between;
+}
+
+.titulo {
+  color: rgb(53 72 71);
+  font-size: x-large;
+  font-weight: bold;
+  align-content: center;
+  padding-left: 4px;
 }

@@ -2,6 +2,7 @@ package com.AJCare.proyectofinal.entities;
 import jakarta.persistence.*;
 
 @Entity
+@DiscriminatorValue("Alumno")
 public class Alumno extends Usuario{
 
   @Column
@@ -10,5 +11,15 @@ public class Alumno extends Usuario{
   @ManyToOne
   @JoinColumn(name = "id_curso", referencedColumnName = "id")
   private Curso idCurso;
+
+  public Alumno() {
+    super();
+  }
+
+  public Alumno(String rut, String nombres, String apellidos, String telefonoContacto, Curso idCurso) {
+    super(rut, nombres, apellidos);
+    this.telefonoContacto = telefonoContacto;
+    this.idCurso = idCurso;
+  }
 
 }

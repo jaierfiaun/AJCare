@@ -18,15 +18,18 @@
     <div class="cursos">
 
       <div class="buscador">
+        <a class="titulo">Alumnos</a>
+        <div>
         <label for="curso"></label>
-        <select name="curso" id="curso">
-          <option value="">Seleccione un curso</option>
-          <option
-                  th:each="curso : ${cursos}"
-                  th:value="${curso.id}"
-                  th:text="${curso.nombre}">
-          </option>
-        </select>
+          <select name="curso" id="curso">
+            <option value="">Seleccione un curso</option>
+            <option
+                    th:each="curso : ${cursos}"
+                    th:value="${curso.id}"
+                    th:text="${curso.nombre}">
+            </option>
+          </select>
+        </div>
 
         <a class="boton-agregar">Agregar alumno</a>
       </div>
@@ -39,8 +42,8 @@
             <th>Nombres</th>
             <th>Apellidos</th>
             <th>Contacto</th>
-            <th>Editar</th>
-            <th>Eliminar</th>
+            <th></th>
+            <th></th>
           </tr>
           </thead>
 
@@ -53,7 +56,9 @@
     </div>
 
     <div class="enfermeros">
+
       <div class="agregar-enfermero">
+        <a class="titulo">Enfermeros</a>
         <a href="/agregar-enfermero" class="boton-agregar">Agregar enfermero</a>
       </div>
 
@@ -64,18 +69,29 @@
             <th>RUT</th>
             <th>Nombres</th>
             <th>Apellidos</th>
-            <th>Editar</th>
-            <th>Eliminar</th>
+            <th></th>
+            <th></th>
           </tr>
           </thead>
 
           <tbody>
-            <tr th:each="enfermero : ${enfermeros}">
+            <tr th:each="enfermero : ${enfermeros}" class="fila">
               <td th:text="${enfermero.rut}"></td>
               <td th:text="${enfermero.nombres}"></td>
               <td th:text="${enfermero.apellidos}"></td>
-              <td></td>
-              <td>Eliminar</td>
+              <td>
+                <a th:href="@{/editar-enfermero/{id}(id=${enfermero.id})}"
+                   class="btn-eliminar">
+                  Editar
+                </a>
+              </td>
+              <td>
+                <a th:href="@{/eliminar-enfermero/{id}(id=${enfermero.id})}"
+                   class="btn-eliminar"
+                   onclick="return confirm('¿Estás seguro de que deseas eliminar a este enfermer@?');">
+                  Eliminar
+                </a>
+              </td>
             </tr>
           </tbody>
         </table>

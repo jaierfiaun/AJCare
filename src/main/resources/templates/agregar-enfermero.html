@@ -7,32 +7,44 @@
 </head>
 <body>
 
+  <header>
+    <div class="boton">
+      <a href="/gestion">Volver</a>
+    </div>
+  </header>
+
   <div class="padre">
     <div class="contenedor">
 
-      <div class="entradas">
-        <a>RUT</a>
-        <label id="rut">
-          <input type="text" placeholder="11.222.333-4">
-        </label>
-      </div>
+      <form action="/insertar-enfermero" method="post">
+        <div class="entradas">
+          <a>RUT</a>
+          <label>
+            <input type="text" name="rut" placeholder="11.222.333-4">
+          </label>
+        </div>
 
-      <div class="entradas">
-        <a>Nombres</a>
-        <label id="nombres">
-          <input type="text" placeholder="Juan Camilo">
-        </label>
-      </div>
+        <div class="entradas">
+          <a>Nombres</a>
+          <label>
+            <input type="text" name="nombres" placeholder="Juan Camilo">
+          </label>
+        </div>
 
-      <div class="entradas">
-        <a>Apellidos</a>
-        <label id="apellidos">
-          <input type="text" placeholder="Pérez Aravena">
-        </label>
-      </div>
+        <div class="entradas">
+          <a>Apellidos</a>
+          <label>
+            <input type="text" name="apellidos" placeholder="Pérez Aravena">
+          </label>
+        </div>
 
-      <a id="boton-agregar">Agregar</a>
+        <div>
+          <button type="submit">Agregar</button>
+        </div>
+      </form>
+
     </div>
+
   </div>
 
 </body>

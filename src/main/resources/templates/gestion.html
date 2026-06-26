@@ -33,7 +33,7 @@
             <button type="submit" class="boton-buscar">Buscar</button>
           </div>
         </form>
-        <a class="boton-agregar">Agregar alumno</a>
+        <a href="/agregar-alumno" class="boton-agregar">Agregar alumno</a>
       </div>
 
       <div class="contenedor-tabla">
@@ -55,8 +55,19 @@
             <td th:text="${alumno.nombres}"></td>
             <td th:text="${alumno.apellidos}"></td>
             <td th:text="${alumno.telefonoContacto}"></td>
-            <td>Editar</td>
-            <td>Eliminar</td>
+            <td>
+              <a th:href="@{/editar-alumno/{id}(id=${alumno.id})}"
+                 class="btn-eliminar">
+                Editar
+              </a>
+            </td>
+            <td>
+              <a th:href="@{/eliminar-alumno/{id}(id=${alumno.id})}"
+                 class="btn-eliminar"
+                 onclick="return confirm('¿Estás seguro de que deseas eliminar a este alumno?');">
+                Eliminar
+              </a>
+            </td>
           </tr>
           </tbody>
         </table>

@@ -25,7 +25,13 @@ public class Alumno extends Usuario{
   public String getTelefonoContacto() {
     return telefonoContacto;
   }
+  public void setTelefonoContacto(String telefonoContacto) {
+    this.telefonoContacto = telefonoContacto;
+  }
   public Curso getIdCurso() {
     return idCurso;
+  }
+  public void setIdCurso(Curso idCurso) {
+    this.idCurso = idCurso;
   }
 }

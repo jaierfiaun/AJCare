@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" th:href="@{/editar-alumno.css}">
+  <title>Editar Alumno</title>
+</head>
+<body>
+  <header>
+    <div class="boton">
+      <a href="/gestion">Volver</a>
+    </div>
+  </header>
+
+  <div class="padre">
+    <div class="contenedor">
+
+      <form th:action="@{/actualizar-alumno}" th:object="${alumno}" method="post">
+
+        <input type="hidden" th:field="*{id}" />
+        <input th:if="*{idCurso != null}" type="hidden" name="idCurso" th:value="*{idCurso.id}" />
+
+        <div class="entradas">
+          <a>RUT</a>
+          <label>
+            <input type="text" th:field="*{rut}" required>
+          </label>
+        </div>
+
+        <div class="entradas">
+          <a>Nombres</a>
+          <label>
+            <input type="text" th:field="*{nombres}" required>
+          </label>
+        </div>
+
+        <div class="entradas">
+          <a>Apellidos</a>
+          <label>
+            <input type="text" th:field="*{apellidos}" required>
+          </label>
+        </div>
+
+        <div class="entradas">
+          <a>Teléfono Contacto</a>
+          <label>
+            <input type="text" th:field="*{telefonoContacto}" required>
+          </label>
+        </div>
+
+        <div>
+          <button type="submit">Actualizar</button>
+        </div>
+      </form>
+
+    </div>
+
+  </div>
+</body>
+</html>

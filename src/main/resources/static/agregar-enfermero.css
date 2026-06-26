@@ -1,0 +1,83 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #d5d5d5;
+}
+
+header {
+  background: rgb(53 72 71);
+  display: flex;
+  padding: 10px 4px;
+  justify-content: space-between;
+  height: 5vh;
+}
+
+.boton {
+  background: #ffffff;
+  padding: 6px 12px;
+  border-radius: 8px;
+  margin: 4px 8px;
+  color: rgb(53 72 71);
+  font-size: medium;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.padre {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+  width: 100%;
+  margin: 0;
+}
+
+.contenedor {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+button {
+  background: rgb(53 72 71);
+  padding: 6px 12px;
+  border-radius: 8px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  width: 100%;
+  font-weight: bold;
+  font-size: medium;
+}
+
+input {
+  font-size: medium;
+  width: 250px;
+  padding: 6px 12px;
+  border: 2px solid rgb(53 72 71);
+  border-radius: 8px;
+  background-color: white;
+  color: rgb(53 72 71);
+}
+
+.entradas {
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+  color: rgb(53 72 71);
+  gap: 6px;
+}

@@ -18,7 +18,7 @@ header {
   border-radius: 8px;
   margin: 4px 8px;
   color: rgb(53 72 71);
-  font-size: large;
+  font-size: medium;
 }
 
 a {
@@ -35,26 +35,29 @@ a {
   background: white;
   border-radius: 8px;
   display: flex;
-  justify-content: space-between;
   padding: 8px;
   margin: 10px;
-  width: 75%;
+  flex-direction: column;
+  gap: 10px;
+  width: 60%;
 }
 
 .enfermeros {
   background: white;
   border-radius: 8px;
   display: flex;
-  justify-content: space-evenly;
   padding: 8px;
   margin: 10px;
-  width: 25%;
+  flex-direction: column;
+  width: 40%;
+  gap: 10px;
+  height: 85vh;
 }
 
 #curso {
-  font-size: large;
+  font-size: medium;
   width: 250px;
-  padding: 10px;
+  padding: 6px 12px;
   border: 2px solid rgb(53 72 71);
   border-radius: 8px;
   background-color: white;
@@ -69,19 +72,74 @@ a {
   background-color: white;
 }
 
-#boton-agregar {
-  background: rgb(53 72 71);
+.boton-buscar {
+  background: white;
   padding: 6px 12px;
   border-radius: 8px;
-  color: white;
-  font-size: large;
+  border: rgb(53 72 71) 2px solid;
+  color: rgb(53 72 71);
+  align-items: center;
+  justify-content: center;
+  font-size: medium;
+  height: 100%;
+  cursor: pointer;
+}
+
+.boton-agregar {
+  background: white;
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: rgb(53 72 71) 2px solid;
+  color: rgb(53 72 71);
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .agregar-enfermero {
   width: 100%;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  gap: 4px;
 }
 
+tbody {
+  background: white;
+  color: rgb(53 72 71);
+}
+
+thead {
+  font-size: large;
+  background: rgb(53 72 71);
+  color: white;
+}
+
+table {
+  width: 100%;
+  border-spacing: 0;
+  border-left: rgb(53 72 71) 2px solid;
+  border-right: rgb(53 72 71) 2px solid;
+}
+
+table th, table td {
+  text-align: center;
+  vertical-align: middle;
+  padding: 4px;
+}
+
+td {
+  border-bottom: rgb(53 72 71) 2px solid;
+}
+
+.buscador {
+  display: flex;
+  justify-content: space-between;
+}
+
+.titulo {
+  color: rgb(53 72 71);
+  font-size: x-large;
+  font-weight: bold;
+  align-content: center;
+  padding-left: 4px;
+}

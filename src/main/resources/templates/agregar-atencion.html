@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/agregar-alumno.css}">
+    <title>Agregar Atención</title>
+</head>
+<body>
+<header>
+    <div class="boton">
+        <a href="/index">Volver</a>
+    </div>
+</header>
+
+<div class="padre">
+    <div class="contenedor">
+
+        <form action="/agregar-atencion" method="get">
+            <div class="entradas">
+                <a>Curso</a>
+                <select name="cursoId">
+                    <option value="">Seleccione un curso</option>
+                    <option th:each="curso : ${cursos}"
+                            th:value="${curso.id}"
+                            th:text="${curso.nombre}"
+                            th:selected="${curso.id == cursoSeleccionado}">
+                    </option>
+                </select>
+            </div>
+            <div>
+                <button type="submit">Buscar alumnos</button>
+            </div>
+        </form>
+
+        <form th:if="${cursoSeleccionado != null}" action="/insertar-atencion" method="post">
+
+            <div class="entradas">
+                <a>Alumno</a>
+                <select name="alumnoId">
+                    <option value="">Seleccione un alumno</option>
+                    <option th:each="alumno : ${alumnos}"
+                            th:value="${alumno.id}"
+                            th:text="${alumno.nombres + ' ' + alumno.apellidos}">
+                    </option>
+                </select>
+            </div>
+
+            <div class="entradas">
+                <a>Enfermero</a>
+                <select name="enfermeroId">
+                    <option value="">Seleccione un enfermero</option>
+                    <option th:each="enfermero : ${enfermeros}"
+                            th:value="${enfermero.id}"
+                            th:text="${enfermero.nombres + ' ' + enfermero.apellidos}">
+                    </option>
+                </select>
+            </div>
+
+            <div class="entradas">
+                <a>Motivo</a>
+                <label>
+                    <input type="text" name="motivo" placeholder="Describa el motivo de la atención">
+                </label>
+            </div>
+
+            <div>
+                <button type="submit">Registrar atención</button>
+            </div>
+        </form>
+
+    </div>
+</div>
+</body>
+</html>

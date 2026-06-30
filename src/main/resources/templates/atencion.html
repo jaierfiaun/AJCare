@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/gestion.css}">
+    <title>Atenciones</title>
+</head>
+<body>
+
+<header>
+    <div class="boton">
+        <a href="/index">Volver</a>
+    </div>
+</header>
+
+<div id="contenedor">
+    <div class="cursos">
+
+        <div class="buscador">
+            <a class="titulo">Atenciones registradas</a>
+            <a href="/agregar-atencion" class="boton-agregar">Registrar atención</a>
+        </div>
+
+        <div class="contenedor-tabla">
+            <table>
+                <thead>
+                <tr>
+                    <th>Fecha y hora</th>
+                    <th>Alumno</th>
+                    <th>Enfermero</th>
+                    <th>Motivo</th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="atencion : ${atenciones}">
+                    <td th:text="${#temporals.format(atencion.fechaHora, 'dd/MM/yyyy HH:mm')}"></td>                    <td th:text="${atencion.idAlumno.nombres + ' ' + atencion.idAlumno.apellidos}"></td>
+                    <td th:text="${atencion.idEnfermero.nombres + ' ' + atencion.idEnfermero.apellidos}"></td>
+                    <td th:text="${atencion.motivo}"></td>
+                    <td>
+                        <a th:href="@{/eliminar-atencion/{id}(id=${atencion.id})}"
+                           class="btn-eliminar"
+                           onclick="return confirm('¿Eliminar esta atención?');">
+                            Eliminar
+                        </a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>

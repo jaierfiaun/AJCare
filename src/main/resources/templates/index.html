@@ -43,16 +43,33 @@
             <th>Opciones</th>
           </tr>
         </thead>
-        <tbody>
+          <tbody>
+          <tr th:each="atencion : ${atenciones}">
+              <td th:text="${atencion.idAlumno.nombres}"></td>
+              <td th:text="${atencion.idAlumno.apellidos}"></td>
+              <td th:text="${atencion.idAlumno.idCurso.nombre}"></td>
+              <td th:text="${#temporals.format(atencion.fechaHora, 'dd/MM/yyyy')}"></td>
+              <td th:text="${atencion.idAlumno.telefonoContacto}"></td>
+              <td th:text="${#temporals.format(atencion.fechaHora, 'HH:mm')}"></td>
+              <td></td>
+              <td>
+                  <a th:href="@{/eliminar-atencion/{id}(id=${atencion.id})}"
+                     onclick="return confirm('¿Eliminar esta atención?');">
+                      Eliminar
+                  </a>
+              </td>
+          </tr>
+          </tbody>
 
-        </tbody>
+
       </table>
     </div>
 
-    <div class="contenedor-inferior">
-      <a class="boton-inferior" href="/atenciones">
-        Agregar Atención
-      </a>
+      <div class="contenedor-inferior">
+          <div class="boton-inferior">
+              <a href="/agregar-atencion">Agregar Atención</a>
+          </div>
+      </div>
     </div>
   </div>
 
